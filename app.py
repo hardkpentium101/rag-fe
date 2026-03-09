@@ -64,7 +64,7 @@ with col1:
 if submit_button and query.strip():
     with st.spinner("Searching and generating answer..."):
         try:
-            # Make API request
+            # Make API request with extended timeout for CPU inference
             response = httpx.post(
                 f"{BACKEND_URL}/query",
                 json={
@@ -72,7 +72,7 @@ if submit_button and query.strip():
                     "top_k": 5,
                     "language": selected_lang_code
                 },
-                timeout=120.0
+                timeout=httpx.Timeout(300.0, connect=30.0, read=300.0)
             )
             
             if response.status_code == 200:
