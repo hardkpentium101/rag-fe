@@ -17,7 +17,7 @@ st.set_page_config(
 
 # Page title
 st.title("🤖 indicRAG System")
-st.markdown("Ask questions in any supported Indic language. The system will respond in the same language.")
+st.markdown("Powered by Qwen-1.5-1.8B. Ask questions in any supported Indic language. The system will respond in the same language.")
 
 # Supported languages
 SUPPORTED_LANGUAGES = [
@@ -102,7 +102,7 @@ st.markdown(
     }
     </style>
     <div class="footer">
-        indicRAG System - Powered by Sarvam-1 and Qdrant
+        indicRAG System - Powered by Qwen-1.5-1.8B and Qdrant
     </div>
     """,
     unsafe_allow_html=True
